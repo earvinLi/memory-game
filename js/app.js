@@ -34,3 +34,15 @@ for (let i = 0; i < allCards.length; i++) {
  function displayCard(card) {
      card.addClass('open show');
  }
+
+ let openCards = [];
+ function collectOpen(card) {
+     openCards.push(card.children('i').attr('class'));
+ }
+
+ $('.card').click(function() {
+     if (openCards.length < 2) {
+         displayCard($(this));
+         collectOpen($(this));
+     }
+ });
