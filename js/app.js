@@ -35,8 +35,11 @@ for (let i = 0; i < allCards.length; i++) {
  }
 
  let openCards = [];
+ let openCardsId = [];
+
  function collectOpen(card) {
      openCards.push(card.children('i').attr('class'));
+     openCardsId.push(card.children('i').attr('id'));
  }
 
  $('.card').click(function() {
