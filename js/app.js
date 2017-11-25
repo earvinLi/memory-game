@@ -43,7 +43,7 @@ for (let i = 0; i < allCards.length; i++) {
  }
 
  function match(card) {
-     card.addClass('match');
+     card.addClass('match'); $('[id='+openCardsId[0]+']').parent().addClass('match');
      openCards = [];
      openCardsId = [];
  }
