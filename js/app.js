@@ -42,6 +42,12 @@ for (let i = 0; i < allCards.length; i++) {
      openCardsId.push(card.children('i').attr('id'));
  }
 
+ function match(card) {
+     card.addClass('match');
+     openCards = [];
+     openCardsId = [];
+ }
+
  $('.card').click(function() {
      if (openCards.length < 2) {
          displayCard($(this));
