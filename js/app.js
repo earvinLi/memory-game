@@ -17,7 +17,7 @@ function shuffle(array) {
 
 shuffle(allCards);
 for (let i = 0; i < allCards.length; i++) {
-    $('.deck').append('<li class="card"><i></i></li>');
+    $('.deck').append('<li class="card"><i id="card_'+i+'"></i></li>');
     $('.card:last i').addClass(allCards[i]);
 }
 
