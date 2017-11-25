@@ -42,6 +42,13 @@ for (let i = 0; i < allCards.length; i++) {
  $('.card').click(function() {
      if (openCards.length < 2) {
          displayCard($(this));
-         collectOpen($(this));
+         if (openCards.length === 0) {
+             collectOpen($(this));
+         } else {
+             collectOpen($(this));
+             if (openCards[1] === openCards[0] && openCardsId[0] !== openCardsId[1]) {
+                 match($(this));
+             }
+         }
      }
  });
