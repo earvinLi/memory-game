@@ -94,8 +94,11 @@ for (let i = 0; i < allCards.length; i++) {
      })
  }
 
+
  $('.deck').one('click', function() {
-     startTime = new Date;
+     let startTime = new Date;
+     let m = 0;
+     let secs;
      setInterval(getTime, 1000);
  })
 
