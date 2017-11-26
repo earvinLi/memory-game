@@ -74,6 +74,11 @@ for (let i = 0; i < allCards.length; i++) {
      })
  }
 
+ $('.deck').one('click', function() {
+     startTime = new Date;
+     setInterval(getTime, 1000);
+ })
+
  $('.card').click(function() {
      if (openCards.length < 2) {
          displayCard($(this));
