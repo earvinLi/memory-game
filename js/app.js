@@ -51,6 +51,10 @@ for (let i = 0; i < allCards.length; i++) {
      if (s % 59 === 0) {
          startTime = new Date;
          m += 1;
+         // delete a star when 1 minute and 3 minutes elapsed
+         if (m === 1 || m === 3) {
+             $('.stars li:last').remove();
+         }
      }
      $('.time').text(formTime(m) + ':' + s);
      secs = s;
