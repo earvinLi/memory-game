@@ -40,6 +40,22 @@ for (let i = 0; i < allCards.length; i++) {
      $('.moves').text(moves + ' Moves');
  }
 
+ function getTime() {
+     // add 0 when time's under 10
+     function formTime(num) {
+         return (num < 10 ? '0' : '') + num;
+     }
+     let elapsedTime = new Date - startTime,
+         s = formTime(Math.round(elapsedTime / 1000, 0));
+     // reset startTime when it reaches a minute
+     if (s % 59 === 0) {
+         startTime = new Date;
+         m += 1;
+     }
+     $('.time').text(formTime(m) + ':' + s);
+     secs = s;
+ }
+
  let openCards = [];
  let openCardsId = [];
  let openCardsNumber = 0;
