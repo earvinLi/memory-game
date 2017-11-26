@@ -64,6 +64,16 @@ for (let i = 0; i < allCards.length; i++) {
      }, 500);
  }
 
+ function win() {
+     $('#playPanel').css({'display' : 'none'});
+     $('#winPanel').css({'display' : 'block'});
+     $('#sta').text('With ' + moves + ' Moves and ' + $('.stars li').length + ' Stars.');
+     $('#timeSta').text('Within ' + m + ' minutes and ' + secs + ' seconds. Woooo!');
+     $('#pl').click(function() {
+         location.reload();
+     })
+ }
+
  $('.card').click(function() {
      if (openCards.length < 2) {
          displayCard($(this));
