@@ -33,10 +33,12 @@ for (let i = 0; i < allCards.length; i++) {
  function displayCard(card) {
      card.addClass('open show');
  }
+ function hideCard(card) {
+     card.removeClass('open show');
+ }
 
  let openCards = [];
  let openCardsId = [];
-
  function collectOpen(card) {
      openCards.push(card.children('i').attr('class'));
      openCardsId.push(card.children('i').attr('id'));
@@ -57,6 +59,8 @@ for (let i = 0; i < allCards.length; i++) {
              collectOpen($(this));
              if (openCards[1] === openCards[0] && openCardsId[0] !== openCardsId[1]) {
                  match($(this));
+             } else {
+                 notMatch($(this));
              }
          }
      }
