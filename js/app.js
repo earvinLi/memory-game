@@ -21,12 +21,6 @@ for (let i = 0; i < allCards.length; i++) {
     $('.card:last i').addClass(allCards[i]);
 }
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
-
  function displayCard(card) {
      card.addClass('open show');
  }
@@ -122,4 +116,8 @@ for (let i = 0; i < allCards.length; i++) {
              }
          }
      }
+ });
+
+ $('.restart').click(function() {
+     location.reload();
  });
