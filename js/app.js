@@ -34,6 +34,12 @@ for (let i = 0; i < allCards.length; i++) {
      card.removeClass('open show');
  }
 
+ let = moves 0;
+ function countMoves() {
+     moves += 1;
+     $('.moves').text(moves + ' Moves');
+ }
+
  let openCards = [];
  let openCardsId = [];
  function collectOpen(card) {
@@ -63,6 +69,9 @@ for (let i = 0; i < allCards.length; i++) {
              collectOpen($(this));
          } else {
              collectOpen($(this));
+             if (openCardsId[0] !== openCardsId[1]) {
+                 countMoves();
+             }
              if (openCards[1] === openCards[0] && openCardsId[0] !== openCardsId[1]) {
                  match($(this));
              } else {
