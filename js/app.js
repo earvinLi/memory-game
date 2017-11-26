@@ -42,6 +42,7 @@ for (let i = 0; i < allCards.length; i++) {
 
  let openCards = [];
  let openCardsId = [];
+ let openCardsNumber = 0;
  function collectOpen(card) {
      openCards.push(card.children('i').attr('class'));
      openCardsId.push(card.children('i').attr('id'));
@@ -51,6 +52,7 @@ for (let i = 0; i < allCards.length; i++) {
      card.addClass('match'); $('[id='+openCardsId[0]+']').parent().addClass('match');
      openCards = [];
      openCardsId = [];
+     openCardsNumber += 2;
  }
  function notMatch(card) {
      let clickedCard = card;
@@ -74,6 +76,9 @@ for (let i = 0; i < allCards.length; i++) {
              }
              if (openCards[1] === openCards[0] && openCardsId[0] !== openCardsId[1]) {
                  match($(this));
+                 if (openCardsNumber === allCards.length) {
+                     win();
+                 }
              } else {
                  notMatch($(this));
              }
